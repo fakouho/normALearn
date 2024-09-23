@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projectA.Mapper.output_mapper">
+	<!-- output 정보 내림차로 가져오는 쿼리 -->
+	<select id="getListOutput" resultType="com.projectA.VO.Al_outputVO">
+		SELECT 
+    	al_output.*, 
+	    al_result.myPage 
+		FROM 
+	    al_output 
+		JOIN 
+	    al_result
+		ON 
+	    al_output.outputIdx = al_result.outputIdx 
+		ORDER BY 
+	    al_output.searchDate DESC
+	</select>
+
+</mapper>

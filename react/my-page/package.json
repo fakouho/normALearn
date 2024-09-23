@@ -1,0 +1,61 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mdi/react": "^1.6.1",
+    "@mui/material": "^5.15.19",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@testing-library/user-event": "^14.5.2",
+    "bootstrap": "^5.3.3",
+    "boxicons": "^2.1.4",
+    "chart.js": "^4.4.3",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.7.1",
+    "jquery-ui": "^1.13.3",
+    "material-icons": "^1.13.12",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
+    "react-cookie": "^7.1.4",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
+    "react-loader-spinner": "^6.1.6",
+    "react-modal": "^3.16.1",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^5.3.6",
+    "web-vitals": "^4.0.1"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run start-react\" \"npm run start-flask\" \"npm run start-spring\"",
+    "start-react": "react-scripts start",
+    "start-flask": "cd ../../flask && concurrently \"python flask_model.py\" \"python upflask.py\"",
+    "start-spring": "cd ../../SpringBoot/projectA && concurrently \"mvnw spring-boot:run\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@mdi/font": "^7.4.47",
+    "concurrently": "^8.2.2"
+  },
+  "proxyConfig": "./proxy.config.js"
+}

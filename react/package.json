@@ -1,0 +1,66 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mdi/react": "^1.6.1",
+    "@mui/material": "^5.15.19",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@testing-library/user-event": "^14.5.2",
+    "bootstrap": "^5.3.3",
+    "boxicons": "^2.1.4",
+    "chart.js": "^4.4.3",
+    "dayjs": "^1.11.11",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.7.1",
+    "jquery-ui": "^1.13.3",
+    "material-icons": "^1.13.12",
+    "moment": "^2.30.1",
+    "react": "^18.3.1",
+    "react-calendar": "^5.0.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-cookie": "^7.1.4",
+    "react-datepicker": "^6.9.0",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
+    "react-load-script": "^0.0.6",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^5.3.11",
+    "web-vitals": "^4.0.1"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run start-react\" \"npm run start-flask\"",
+    "start-react": "cd react/my-page && npm start",
+    "start-flask": "cd flask && python flask_model.py & python upflask.py",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@mdi/font": "^7.4.47",
+    "@types/styled-components": "^5.1.34"
+  }
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projectA.Mapper.result_mapper">
+
+   <!-- 처음 DB에 저장된 -->
+   <select id="getResultList" parameterType="com.projectA.VO.Al_resultVO" resultType="com.projectA.VO.Al_resultVO">
+		    SELECT 
+		    o.tensileStrengthResult,
+		    o.yieldStrengthResult,
+		    o.hardnessResult,
+		    o.elongationResult,
+		    o.searchDate,
+		    r.resultIdx AS resultIdx,
+		    r.userId,
+		    r.outputIdx AS outputIdx,
+		    r.nickname,
+		    r.favorite,
+		    r.number,
+    		r.myPage
+			FROM 
+		    al_result r
+			INNER JOIN 
+		    al_output o ON r.outputIdx = o.outputIdx
+			INNER JOIN
+		    al_input i ON o.inputIdx = i.inputIdx
+			WHERE 
+		    r.userId = #{userId}
+			ORDER BY 
+		    CASE WHEN r.favorite = 'Y' THEN 0 ELSE 1 END,
+		    o.searchDate DESC, 
+		    r.number ASC
+			LIMIT 12
+   </select>
+
+   <!-- 드래그로 위치 변경시 기존 번호와 변경 번호를 활용하여 작동되는 순서변경 sql -->
+   <update id="changeResultNumber"   parameterType="com.projectA.VO.Al_resultVO">
+      UPDATE al_result
+      SET number = CASE
+      WHEN number = #{oldNumber} THEN #{newNumber}
+      WHEN number BETWEEN #{newNumber} AND #{oldNumber-1} THEN number + 1
+      ELSE number
+      END
+      WHERE number BETWEEN #{newNumber} AND #{oldNumber}
+   </update>
+   
+   <!-- 체크 박스 선택시 선택 해제 하는 sql -->
+   <update id="changeResultCheckBox" parameterType="com.projectA.VO.Al_resultVO">
+      UPDATE al_result
+      SET favorite = CASE 
+                WHEN favorite = 'Y' THEN 'N'
+                ELSE 'Y'
+             END
+      WHERE outputIdx = #{outputIdx}
+   </update>
+   <!-- 마이페이지에 뜨는 result 값 -->
+   <update id="mypageCheck" parameterType="com.projectA.VO.Al_resultVO">
+      UPDATE al_result
+      SET myPage = CASE 
+                WHEN myPage = 'Y' THEN 'N'
+                ELSE 'Y'
+             END
+      WHERE outputIdx = #{outputIdx}
+   </update>
+   
+   <!-- Mypage 체크 된것만 불러오기  -->
+   <select id="getMypageList" parameterType="com.projectA.VO.Al_resultVO" resultType="com.projectA.VO.Al_resultVO">
+      SELECT * 
+      FROM al_result
+      WHERE myPage = 'Y'
+      AND userId= #{userId}
+   </select>
+   
+   
+
+</mapper>

@@ -1,0 +1,406 @@
+html {
+  padding: 0px;
+  margin: 0px;
+}
+
+@import '~font-awesome/css/font-awesome.min.css';
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+h1 {
+  margin-bottom: 20px;  /* h1 태그와 테이블 사이의 거리를 조정 */
+}
+
+.table-container {
+  border: 2px solid black;  /* 테이블 전체에 테두리를 추가 */
+  padding: 10px;  /* 테두리와 테이블 사이의 여백 */
+  height: 700px;  /* 고정된 높이를 더 크게 설정 */
+  width: 65%;  /* 고정된 너비를 더 크게 설정 */
+  overflow-y: auto;  /* 세로 스크롤 바 추가 */
+  margin: 0 auto;  /* 중앙 정렬 */
+  display: block;
+}
+
+.table {
+  height: 50%;
+  width: 100%;  /* 테이블 너비를 100%로 설정 */
+  border-collapse: collapse;  /* 테이블 셀 간의 간격 제거 */
+}
+
+.table th, .table td {
+  padding: 8px;  /* 셀 내부 여백 설정 */
+  text-align: center;  /* 텍스트 정렬 */
+  border: 1px solid #ddd;  /* 셀 테두리 추가 */
+}
+
+.table thead th {
+  position: sticky;  /* 헤더 고정 */
+  top: 0;  /* 테이블 상단에 고정 */
+  background-color: #f2f2f2;  /* 배경색 지정 */
+  z-index: 1;  /* 다른 요소보다 위에 표시 */
+}
+
+.dongdong { 
+  display: flex;
+}
+
+.dongdongone {
+  width: 60%;
+  height: 45vh;
+  background-color: lightpink;
+}
+
+.dongdongtwo {
+  width: 40%;
+  height: 45vh;
+  background-color: lightyellow;
+}
+
+.user-info {
+  width: 100%;
+  box-sizing: border-box !important;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.user-info li {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.user-info li p {
+  color: #191F28;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.user-info li i {
+  margin-left: 5px;
+}
+
+.user-info .user-name {
+  padding-top: 80px;
+  font-size: 25px;
+  display: flex;
+  margin-right: 0;
+  font-weight: 600;
+}
+
+.user-info .user-name .fa {
+  margin: 0;
+  padding: 0;
+  width: 20px !important;
+}
+
+.user-info .user-actions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-info .user-actions p {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7684;
+}
+
+.user-info .user-actions p:nth-child(2) {
+  margin: 0;
+  font-size: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.user-info .user-actions p:nth-child(1),
+.user-info .user-actions p:nth-child(3) {
+  cursor: pointer;
+}
+
+/* 로그인 입력 필드 스타일 */
+.user-info .login-fields {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 85px; /* 상단 마진 추가 */
+}
+
+.user-info .login-fields input[type="text"],
+.user-info .login-fields input[type="password"] {
+  width: 150px; /* 원하는 너비로 설정 */
+  height: 30px;
+  padding: 5px; /* 패딩 조절 */
+  margin: 5px 0; /* 상하 마진 추가 */
+  font-size: 14px; /* 텍스트 크기 설정 */
+}
+
+.user-info .login-fields button {
+  width: 110px; /* 버튼 너비 설정 */
+  height: 30px;
+  padding: 5px; /* 패딩 조절 */
+  margin-top: 5px; /* 상단 마진 추가 */
+  font-size: 14px; /* 버튼 텍스트 크기 설정 */
+}
+
+/* 모달 창 스타일 */
+.modal-overlay {
+  margin-left: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #f4f4f4; /* 모달 창 배경색을 밝은 회색으로 설정 */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* 내부 패딩을 추가하여 여백 생성 */
+}
+
+.modal-content h2{
+  padding: 10px;
+  font-size: 24px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  background-color: #efefef;
+  border: 1px solid rgba(155, 170, 190, 0.164)
+  
+}
+
+.modal-content input::placeholder {
+  color: var(--input-placeholder);
+  border-color: var(--input-background);
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: var(--input-background);
+  border: 1px solid rgba(119, 131, 146, 0.717)
+}
+
+
+
+.modal-content .btn-primary{
+  background-color: #CACCCB;
+  border: #CACCCB;
+}
+
+.modal-content .btn-primary:hover{
+  background-color: #acacac;
+  border: #acacac;
+}
+
+.modal-content .button-container {
+  display: flex;
+  justify-content: space-around; /* This will space the buttons evenly */
+  width: 100%; /* Take up the full width of the modal content */
+  margin-top: 20px; /* Optional: Adds some space above the button container */
+}
+
+.btn-primary {
+  flex-grow: 1; /* Each button will grow to fill the container */
+  margin: 0 5px; /* Adds space between the buttons */
+}
+
+
+
+
+.fa {
+  display: flex;          /* Use flexbox for layout */
+  justify-content: center;/* Center align horizontally */
+  align-items: center;    /* Center align vertically */
+  width: 70px;
+  height: 36px;
+  text-align: center;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.nav-text {
+  display: table-cell;
+  vertical-align: middle;
+  width: 250px;
+}
+
+.main-menu:hover,
+nav.main-menu.expanded {
+  width: 300px;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.main-menu {
+  background-color: #fff;
+  box-sizing: border-box; /* 패딩과 테두리를 전체 너비와 높이에 포함 */
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  overflow-y: auto;
+  overflow: hidden;
+  -webkit-transition: width 0.2s linear;
+  transition: width 0.2s linear;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.119);
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.darkerlishadow {
+  padding-bottom: 10px;
+}
+
+.scroll-first {
+  padding-top: 10px;
+}
+
+.main-menu > ul {
+  margin: 7px 0;
+  margin-left: 10px;
+}
+
+.main-menu li {
+  position: relative;
+  display: block;
+}
+
+.main-menu li > a {
+  position: relative;
+  width: 300px;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: #4E5968;
+  font-size: 14px;
+  text-decoration: none;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  -webkit-transition: all 0.14s linear;
+  transition: all 0.14s linear;
+  text-shadow: 1px 1px 1px #fff;
+  cursor: pointer;
+}
+
+.main-menu .fb-like {
+  left: 180px;
+  position: absolute;
+  top: 15px;
+}
+
+.no-touch .scrollable.hover {
+  overflow-y: hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+  overflow-y: auto;
+  overflow: visible;
+}
+
+/* Logo Hover Property */
+.settings:hover,
+.settings:focus {
+  background: url(https://s17.postimg.org/74cl7s05b/logo_hover.jpg);
+  -webkit-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+  -moz-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+  -o-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+  transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+}
+
+.settings:active,
+.settings:focus {
+  background: url(https://s3.postimg.org/bqfooag4z/startific.jpg);
+  -webkit-transition: all 0.1s ease-in-out, width 0, height 0, top 0, left 0;
+  -moz-transition: all 0.1s ease-in-out, width 0, height 0, top 0, left 0;
+  -o-transition: all 0.1s ease-in-out, width 0, height 0, top 0, left 0;
+  transition: all 0.1s ease-in-out, width 0, height 0, top 0, left 0;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  border-left: 0px solid #f7f7f7;
+}
+
+nav {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+nav ul,
+nav li {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+/* Darker element side menu Start */
+.darkerli {
+  color: #8a8a8a;
+  text-transform: capitalize;
+}
+
+.darkerli a {
+  align-items: center;
+}
+
+.darkerlishadow {
+  position: -webkit-sticky; /* 사파리 브라우저를 위한 접두사 */
+  position: sticky;
+  top: 0; /* 스크롤 시 고정될 위치 설정 */
+  width: 300px; /* 요소가 전체 너비를 차지하도록 설정, 필요에 따라 조정 */
+  -webkit-box-shadow: 0px 5px 5px -4px rgba(50, 50, 50, 0.55);
+  -moz-box-shadow: 0px 5px 5px -4px rgba(50, 50, 50, 0.55);
+  box-shadow: 0px 5px 5px -4px rgba(50, 50, 50, 0.55);
+  z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
+}
+
+/* Darker element side menu End */
+.main-menu li:hover > a,
+nav.main-menu li.active > a,
+.main-menu .darkerli:hover > a,
+nav.main-menu .darkerli.active > a,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus,
+.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
+.dashboard-page nav.dashboard-menu ul li.active a {
+  color: #fff;
+  background-color: #191F28; /* hover color */
+  text-shadow: 0px 0px 0px;
+}
+
+/*본화면 컨테이너*/
+.content-container {
+  margin-left: 300px;
+  width: calc(100% - 300px);
+  height: 100vh;
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+  overflow-y: auto; /* Ensure content is scrollable if necessary */
+}

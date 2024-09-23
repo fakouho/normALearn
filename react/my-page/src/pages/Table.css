@@ -1,0 +1,44 @@
+.table-wrap {
+    width: 100%; 
+    margin-top: 530px; 
+
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.table-area {
+    max-height: 180px; 
+    overflow-y: auto; 
+    border: 1px solid #ddd; 
+    width: 79%; 
+}
+
+.table-group {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.table-group th, .table-group td {
+    padding: 6px !important; 
+    text-align: center; 
+    border-bottom: 1px solid #ddd; 
+}
+
+.table-group th {
+    background-color: #f2f2f2; 
+    position: sticky; 
+    top: 0; 
+}
+
+.rank-column {
+    width: 10%;
+}
+
+.rank-column-td {
+    width: 10%;
+}
+
+.spaced-title th {
+    padding: 12px;
+}

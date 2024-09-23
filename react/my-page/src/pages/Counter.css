@@ -1,0 +1,214 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.counter-wrap {
+    position: absolute;
+    margin-top: 80px;
+    width: calc(100% - 300px);
+}
+
+.counter-area {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.counter-area h1 {
+    width: 100%;
+    font-size: 28px;
+    color: #191F28;
+}
+
+.counter-group {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.counter-group button {
+    margin-bottom: 10px;
+}
+
+.counter-group button:nth-child(1) {
+    margin-right: 10px;
+}
+
+.form-control {
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.option-select {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 10px;
+}
+
+.option-select button {
+    margin-left: 10px; 
+    width: auto; 
+}
+
+.option-text {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.table-wrapper {
+    flex: 1 1 45%; 
+    min-width: 300px; 
+    margin-bottom: 20px; 
+}
+
+.table-index {
+    width: 100%;
+    border: none; 
+    table-layout: fixed; 
+}
+
+.table-index th, .table-index td {
+    padding: 8px; 
+    text-align: left; 
+    vertical-align: middle; 
+}
+
+.table-index thead th {
+    background-color: #f8f9fa; 
+    font-weight: bold; 
+}
+
+.table-index tbody td {
+    background-color: #ffffff; 
+}
+
+.table-index label {
+    display: flex; 
+    align-items: center; 
+    width: 100%; 
+    box-sizing: border-box; 
+    justify-content: center; 
+}
+
+.table-index input {
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.table-responsive {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+tbody, td, tfoot, th, thead, tr {
+    border: none !important;
+}
+
+
+
+
+.align-middle label {
+    display: inline-block; 
+    font-size: 18px;
+    justify-content: center; 
+    text-align: center; 
+    background-color: #8b95a1;
+    border-radius: 20px;
+    padding: 0px 10px;
+    color: #fff;
+    width: 160px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+
+
+
+.table-value {
+    font-size: 16px;
+    text-align: center; 
+    font-weight: 600;
+    margin: 2px 0px;
+    padding: 2px 16px;
+}
+
+
+
+.table-text-group {
+    display: block;
+    padding: 2px 14px;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 20px;
+    -webkit-appearance: none;
+    border: 1px solid var(--input-border);
+    background: var(--input-background);
+    transition: border .3s ease;
+    height: 26px;
+    box-sizing: border-box;
+    max-width: 160px;
+    text-align: center;
+    margin: 0 auto;
+
+   
+}
+
+
+.table-responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.table-btn-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+
+/* 확인 버튼 크기 수정 */ 
+.table-btn-container {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+.table-btn-container .btn-primary {
+    width: 100px !important; 
+    align-self: center; 
+}
+
+
+.btn-primary{
+    background-color: #CACCCB !important;
+    border: #CACCCB !important;
+}
+
+.btn-primary:hover{
+    background-color: #acacac !important;
+    border: #acacac !important;
+}
+

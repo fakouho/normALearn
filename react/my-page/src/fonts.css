@@ -1,0 +1,16 @@
+/* src/fonts.css */
+@import url('https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css');
+
+
+@font-face {
+    font-family: 'Pretendard', sans-serif;
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+/* Apply the font to the entire body */
+
+body {
+    font-family: 'Pretendard', sans-serif;
+}
+

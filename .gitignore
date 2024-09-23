@@ -1,0 +1,22 @@
+# Java 관련
+*.class
+*.jar
+*.war
+*.ear
+
+# Eclipse 관련 파일 포함
+!.classpath
+!.project
+!.settings/
+!HELP
+
+# Maven 관련
+target/
+
+# 기타
+.DS_Store
+/.metadata/
+
+# 깃허브 올리지 않을 파일 관리
+node_modules
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projectA.Mapper.user_mapper">
+	
+	<!-- 로그인 쿼리 암호화된 비밀번호 변경후 전송 -->
+	<select id="login" parameterType="com.projectA.VO.Al_userVO" resultType="com.projectA.VO.Al_userVO">
+		SELECT * FROM al_user WHERE userId=#{userId} AND userPw= SHA2(#{userPw}, 256) 
+	</select>
+	
+	<update id="ChangePw" parameterType="com.projectA.VO.Al_userVO">
+      UPDATE al_user SET userPw = SHA2(#{newPw}, 256) WHERE userId=#{userId} AND userPw = SHA2(#{userPw},256)
+   </update>
+	
+
+</mapper>

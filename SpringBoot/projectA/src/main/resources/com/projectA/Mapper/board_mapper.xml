@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projectA.Mapper.board_mapper">
+
+	<insert id="writeBoard" parameterType="com.projectA.VO.Al_boardVO">
+		INSERT INTO al_board (userId, title, content, progress)
+		VALUES (#{userId}, #{title}, #{content}, '접수')
+	</insert>
+	
+	<select id="getBoardList" parameterType="com.projectA.VO.Al_boardVO" resultType="com.projectA.VO.Al_boardVO">
+		SELECT * FROM al_board
+		WHERE userId = #{userId}
+		ORDER BY writeDate DESC
+	</select>
+	
+	<select id="getAllBoardList" parameterType="com.projectA.VO.Al_boardVO" resultType="com.projectA.VO.Al_boardVO">
+		SELECT * FROM al_board
+		ORDER BY writeDate DESC
+	</select>
+	
+	<update id="editBoard" parameterType="com.projectA.VO.Al_boardVO">
+		UPDATE al_board
+		SET title = #{title}, content = #{content}
+		WHERE boardIdx = #{boardIdx} AND userId = #{userId}
+	</update>
+	
+	<update id="editProgress" parameterType="com.projectA.VO.Al_boardVO">
+		UPDATE al_board SET progress=#{progress} 
+		WHERE boardIdx=#{boardIdx} AND userId=#{userId}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="com.projectA.VO.Al_boardVO">
+		DELETE FROM al_board 
+		WHERE boardIdx = #{boardIdx} 
+		AND userId=#{userId}
+	</delete>
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+</mapper>

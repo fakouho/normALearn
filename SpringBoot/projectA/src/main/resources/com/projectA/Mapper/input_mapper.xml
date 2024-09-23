@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projectA.Mapper.input_mapper">
+
+	<!-- 인장강도, 항복강도, 경도, 연신율을 검색하여 5%내의 데이터들을 날짜 순으로 가져오는 sql -->
+	<select id="insertInputAndUseIdxSearchOutput" parameterType="com.projectA.VO.Al_inputVO" resultType="com.projectA.VO.Al_outputVO">
+		SELECT o.*
+		FROM al_output o
+		JOIN al_input i ON o.inputIdx = i.inputIdx
+		WHERE i.tensileStrength BETWEEN (#{tensileStrength} * 0.95) AND (#{tensileStrength} * 1.05)
+		  AND i.yieldStrength BETWEEN (#{yieldStrength} * 0.95) AND (#{yieldStrength} * 1.05)
+		  AND i.hardness BETWEEN (#{hardness} * 0.95) AND (#{hardness} * 1.05)
+		  AND i.elongation BETWEEN (#{elongation} * 0.95) AND (#{elongation} * 1.05)
+		ORDER BY o.searchDate DESC
+	</select>
+
+</mapper>
